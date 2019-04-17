@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			var checkedAllBtn = document.getElementById("checkedAllBtn");
+			checkedAllBtn.onclick = function(){
+				var items = document.getElementsByName("items");
+				for(var i=0;i<items.length;i++)
+					items[i].checked = true;
+			}
+			//全选按钮
+			var checkedNoBtn = document.getElementById("checkedNoBtn");
+			checkedNoBtn.onclick = function(){
+				var items = document.getElementsByName("items");
+				for(var i=0;i<items.length;i++)
+					items[i].checked = false;
+			}
+			//全不选
+			var checkedRevBtn = document.getElementById("checkedRevBtn");
+			checkedRevBtn.onclick = function(){
+				var items = document.getElementsByName("items");
+				for(var i=0;i<items.length;i++)
+				{
+					items[i].checked = !items[i].checked;
+					// if(items[i].checked)
+					// {
+					// 	items[i].checked = false;
+					// }
+					// else
+					// {
+					// 	items[i].checked = true;
+					// }
+				}
+			}
+			//反选
+			var sendBtn = document.getElementById("sendBtn");
+			sendBtn.onclick = function(){
+				var items = document.getElementsByName("items");
+				for(var i=0;i<items.length;i++)
+				{
+					if(items[i].checked)
+						alert(items[i].value);
+				}
+			}
+			//提交
+			var checkedAllBox = document.getElementById("checkedAllBox");
+			checkedAllBox.onclick = function(){
+				var items = document.getElementsByName("items");
+				for(var i=0;i<items.length;i++)
+					items[i].checked = this.checked;
+				//this === checkedAllBox
+			}
+			//全选框全选与全不选
+		}
+	</script>
+</head>
+<body>
+	<form method="post" action="">
+		你爱好的运动是？
+		<input type="checkbox" id="checkedAllBox" value="">
+		全选/全不选
+		<br>
+		<input type="checkbox" name="items" value="足球">
+		足球
+		<input type="checkbox" name="items" value="篮球">
+		篮球
+		<input type="checkbox" name="items" value="羽毛球">
+		羽毛球
+		<input type="checkbox" name="items" value="乒乓球">
+		乒乓球
+		<br>
+		<input type="button" id="checkedAllBtn" value="全选" />
+		<input type="button" id="checkedNoBtn" value="全不选" />
+		<input type="button" id="checkedRevBtn" value="反选" />
+		<input type="button" id="sendBtn" value="提交" />
+	</form>
+</body>
+</html>
