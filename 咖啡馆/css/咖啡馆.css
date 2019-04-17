@@ -1,0 +1,150 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*消除默认间距*/
+#ztkj{
+	width: 70%;
+	height: 1400px;
+	margin: 0 auto;
+}
+/*主体部分设置长宽，居中*/
+#header{
+	height: 195px;
+	margin-bottom: 5px;
+}
+/*标题部分设置高度，与下间距5像素*/
+#nav{
+	height: 45px;
+	background-color: #1E90FF;
+	margin-bottom: 5px;
+}
+/*导航栏部分设置高度，与下间距5像素*/
+#main{
+	height: 1095px;
+	margin-bottom: 5px;
+}
+/*主题内容部分设置高度，与下间距5像素*/
+#left{
+	float: left;
+	width: 35%;
+	height: 1080px;
+	background-color:#00FFFF;
+}
+/*为使左右区域水平排列，将他们设为浮动定位，设置高宽*/
+#right{
+	float: left;
+	width: 64.5%;
+	height:1095px;
+	margin-left: 5px;
+	background-color: #afeeee;
+}
+/*设为浮动定位，设置高宽，与左区域间距5像素*/
+#footer{
+	height: 50px;
+	background-color: brown;
+}
+#navTEXT{
+	height: 45px;
+	margin:0 auto;
+	width: 70%;
+	background-color: #1E90FF;
+}
+/*导航栏选项部分设置高宽，水平居中*/
+.navtext{
+	float: left;
+	width: 19%;
+	text-align: center;
+	border-right: 3px solid white;
+	margin-top: 10px;
+}
+/*调整选项位置*/
+#navtext1{
+	text-align: center;
+	margin-top: 10px;
+	float: left;
+	width: 18%;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+/*将选项部分设为超链接*/
+a:hover{
+	font-size: 120%;
+	color: brown;
+	transition-duration: 0.5s;
+}
+/*鼠标指向超链接时的变换*/
+#areal1{
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+}
+/*左边区域标题部分设置高宽，垂直水平居中*/
+#areal2{
+	height: 200px;
+	text-align: center;
+}
+/*列表区域设置高度，水平居中*/
+#rightl{
+	float: left;
+	margin-top: 10px;
+	width: 30%;
+	height: 1075px;
+}
+/*右边区域图片部分设置浮动，高宽，间距*/
+.rightl1{
+	float: left;
+	height: 25%;
+	margin-left: 15px;
+}
+#rightr{
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 65%;
+	height: 1075px;
+}
+/*右边区域文字部分设置高宽，浮动，间距*/
+.rightr1{
+	float: left;
+	height: 25%;
+	text-align: left;
+}
+#img2d{
+	text-align: center;
+	margin-left: 90px;
+	transform: scale(0.75);
+}
+/*左边区域图片部分居中，设置间距，缩放*/
+.tpjj{
+	float: left;
+	padding: 20px;
+	background-color: white;
+	-moz-box-shadow: 5px 5px 10px grey;
+	-webkit-box-shadow:5px 5px 10px grey;
+	box-shadow:5px 5px 10px grey;
+}
+/*设置图片边框，阴影*/
+.tpxz1{
+	transform: rotate(15deg);
+	-ms-transform: rotate(15deg);
+	-webkit-transform: rotate(15deg);	
+	-o-transform: rotate(15deg);		
+	-moz-transform: rotate(15deg);		
+}
+.tpxz2{
+	transform: rotate(-15deg);
+	-ms-transform: rotate(-15deg);
+	-webkit-transform: rotate(-15deg);
+	-o-transform: rotate(-15deg);	
+	-moz-transform: rotate(-15deg);	
+}
+/*设置图片旋转角度*/
+#advertisement{
+	float: left;
+	margin-top: 30px;
+	position: fixed;
+}
+/*广告部分设置层定位*/
