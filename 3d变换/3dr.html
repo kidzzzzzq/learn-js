@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			background-color:#0D3462;
+		}
+		/*舞台*/
+		#piclist{  
+			width:760px; /*170*4+10*8*/
+			height: 220px;/*190+边框*/
+			margin: 100px auto;
+		}
+		/*容器*/
+		.picbox{
+			float: left;
+			position: relative;
+			width: 170px;
+			height: 190px;
+			margin: 10px;
+			/*3d——双面效果*/
+			transform-style:preserve-3d;
+			transition:1.5s;
+		}
+		/*舞台鼠标悬停，就翻转，
+		正面背面互换*/
+		.picbox:hover{
+			transform:rotateY(180deg);
+		}
+		.face{
+			position: absolute;
+			width:170px;
+			height:190px;
+		}
+		.front{
+			border:2px solid #4b2518;
+		}		
+		.back{
+			/*让它成为背面，开始只显示正面*/
+			transform:rotateY(180deg);	
+			background-color: #4b2518;
+			border:2px solid #fff;
+		}
+		.back h3{
+			color:white;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="piclist">
+			<div class="picbox">
+	   			<div class="face front"><img src="img/1.jpg"></div>
+				<div class="face back"><h3>浓缩咖啡</h3></div>
+			</div>
+			<div class="picbox">
+	   			<div class="face front"><img src="img/2.jpg"></div>
+				<div class="face back"><h3>卡布奇诺</h3></div>
+			</div>
+			<div class="picbox">
+	   			<div class="face front"><img src="img/3.jpg"></div>
+				<div class="face back"><h3>拿铁</h3></div>
+			</div>
+			<div class="picbox">
+				<div class="face front"><img src="img/4.jpg"></div>
+				<div class="face back"><h3>摩卡</h3></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

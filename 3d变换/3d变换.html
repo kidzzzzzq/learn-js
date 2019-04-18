@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D变换</title>
+	<style>
+		*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #0d3462;
+}
+#stage{
+	width: 760px;
+	height: 220px;
+	margin: 100px auto;
+}
+.box{
+	float: left;
+	width: 170px;
+	height: 190px;
+	margin: 10px;
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	 -moz-transform-style: preserve-3d;
+	 -ms-transform-style: preserve-3d;
+	 transform-style: preserve-3d;
+	 transition: 1.5s;
+}
+.box:hover{
+	transform: rotateY(180deg);
+}
+.face{
+	width: 170px;
+	height: 190px;
+	position: absolute;
+}
+.front{
+	border: 2px solid grey;
+}
+.back{
+	background-color: grey;
+	border: 2px solid #fff;
+	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	}
+.back h3{
+	color: white;
+	text-align: center;
+}
+	</style>
+</head>
+<body>
+	<div id="stage">
+		<div class="box">
+			<div class="face front"><img src="img/1.jpg" alt=""></div>
+			<div class="face back"><h3>柳树</h3></div>
+		</div>
+		<div class="box">
+			<div class="face front"><img src="img/2.jpg" alt=""></div>
+			<div class="face back"><h3>瀑布</h3></div>
+		</div>
+		<div class="box">
+			<div class="face front"><img src="img/3.jpg" alt=""></div>
+			<div class="face back"><h3>江晚</h3></div>
+		</div>
+		<div class="box">
+			<div class="face front"><img src="img/4.jpg" alt=""></div>
+			<div class="face back"><h3>佩奇</h3></div>
+		</div>
+	</div>
+</body>
+</html>

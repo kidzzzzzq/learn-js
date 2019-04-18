@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #cff;
+}
+#stage{
+	margin: 100px auto;
+	width: 760px;
+	height: 220px;
+	background-color: pink;
+}
+.box{
+	float: left;
+	width: 170px;
+	height: 190px;
+	margin: 10px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	transition: 1s;
+}
+.box:hover{
+	transform: rotateY(180deg);
+}
+.face{
+	width: 170px;
+	height: 190px;
+}
+.front{
+	border: 2px solid red;
+}
+.back{
+	color: white;
+	border: 2px solid red;
+	background-color: grey;
+	-webkit-transform:rotateY(180deg);
+	-ms-transform:rotateY(180deg);
+	-o-transform:rotateY(180deg);
+	transform:rotateY(180deg);
+	text-align: center;
+	line-height: 190px; 
+}
