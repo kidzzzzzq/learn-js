@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		table,th,td{
+			border:2px solid black;
+		}
+		#employeeTable{
+			margin:20px auto;
+		}
+		#formDiv{
+			text-align: center;
+		}
+		#center{
+			margin:10px auto;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			function delA(){
+					var tr = this.parentNode.parentNode;
+					var trFc = tr.getElementsByTagName("td")[0].innerHTML;
+					var choice = confirm("确认删除"+trFc+"吗？"); 
+					if(choice)
+						tr.parentNode.removeChild(tr);
+					return false;
+			}
+
+			var allA = document.getElementsByTagName("a");		
+			for(var i=0;i<allA.length;i++)
+			{
+				allA[i].onclick = delA;
+			}
+			
+			var submit = document.getElementById("addEmpButton");
+			submit.onclick = function(){
+				var name = document.getElementById("empName").value;
+				var email = document.getElementById("email").value;
+				var salary = document.getElementById("salary").value;
+
+				var tr = document.createElement("tr");
+				
+				tr.innerHTML =	"<td>"+name+"</td>"+
+								"<td>"+email+"</td>"+
+								"<td>"+salary+"</td>"+
+								"<td><a href='javascript:;'>delete</a></td>" ;
+				var a = tr.getElementsByTagName("a")[0];
+				a.onclick = delA;
+							
+				// var nameTd = document.createElement("td");
+				// var emailTd = document.createElement("td");
+				// var salaryTd = document.createElement("td");
+				// var aTd = document.createElement("td");
+				// var a = document.createElement("a");
+
+				// var nameText = document.createTextNode(name);
+				// var emailText = document.createTextNode(email);
+				// var salaryText = document.createTextNode(salary);
+				// var delText = document.createTextNode("delete");
+
+				// nameTd.appendChild(nameText);
+				// emailTd.appendChild(emailText);
+				// salaryTd.appendChild(salaryText);
+				// a.appendChild(delText);
+				// aTd.appendChild(a);
+
+				// tr.appendChild(nameTd);
+				// tr.appendChild(emailTd);
+				// tr.appendChild(salaryTd);
+				// tr.appendChild(aTd);
+				// a.href = "javascript:;";
+				// a.onclick = delA;
+
+				var employeeTable = document.getElementById("employeeTable");
+				var tbody = document.getElementsByTagName("tbody")[0];
+				tbody.appendChild(tr);	
+			}
+		}
+	</script>
+</head>
+<body>
+	<table id="employeeTable">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th></th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>Tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="javascript:;">delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>Jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="javascript:;">delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>Bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="javascript:;">delete</a></td>
+		</tr>
+	</table>
+	<div id="formDiv">
+		<h4>添加新员工</h4>
+		<table id="center">
+			<tr>
+				<td class="word">name:</td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName">
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email:</td>
+				<td class="inp">
+					<input type="text" name="email" id="email">
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary:</td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton" value="abc">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
