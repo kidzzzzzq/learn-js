@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#outer{
+			width: 170px;
+			margin: 10px auto; 
+			background-color: greenyellow;
+			padding: 10px;
+			text-align: center;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var prev = document.getElementById("prev");
+			var next = document.getElementById("next");
+			var img = document.getElementsByTagName("img")[0];
+			var imgArr = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"];
+			var index=0;
+			var info = document.getElementById("info");
+			info.innerHTML = "一共有"+imgArr.length+"张图片，当前是第"+(index+1)+"张图片。"
+			prev.onclick = function(){
+				index--;
+				if(index<0)
+					index=index=imgArr.length-1;
+				img.src = imgArr[index];
+				info.innerHTML = "一共有"+imgArr.length+"张图片，当前是第"+(index+1)+"张图片。"
+			};
+
+			next.onclick = function(){
+				index++;
+				if(index>imgArr.length-1)
+					index=0;
+				img.src = imgArr[index];
+				info.innerHTML = "一共有"+imgArr.length+"张图片，当前是第"+(index+1)+"张图片。"
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="outer">
+		<p id="info"></p>
+		<img src="img/1.jpg" alt="咖啡">
+		<button id="prev">上一张</button>
+		<button id="next">下一张</button>
+	</div>
+</body>
+</html>
