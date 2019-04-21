@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#info{
+			width: 300px;
+			height: 500px;
+			background-color: greenyellow;
+			overflow: auto;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var info = document.getElementById("info");
+			var inputs = document.getElementsByTagName("input");
+			info.onscroll = function(){
+				if(info.scrollHeight-info.scrollTop == info.clientHeight)
+				{
+					inputs[0].disabled = false;
+					inputs[1].disabled = false;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<h3>尊敬的用户,欢迎完成注册</h3>
+	<p id="info">
+		亲爱的用户，请仔细阅读以下协议。
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nostrum modi consequuntur ratione, quam, quo! Neque repudiandae molestias, maiores ab illo laboriosam, voluptatibus odit omnis cupiditate, ex voluptatem a laudantium!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ipsum non voluptatibus nulla fugiat sapiente similique! Alias sunt nobis nostrum aut, ratione nesciunt vero, quaerat debitis nam asperiores pariatur eum.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam fugiat adipisci dolore possimus. Vel facere natus, quidem deserunt minus corporis voluptatibus, quaerat fugiat excepturi sequi id in est iusto rerum.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, perferendis eos impedit beatae soluta minima repellendus dolore, id cupiditate earum ducimus ad voluptatibus? Sunt ea omnis minima itaque. Tempora, ut.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio sint autem, dolore deleniti dolorum dignissimos mollitia id? Repellendus iusto eum ipsa, id repudiandae, nisi, voluptatum sit fugiat quis dolorem, libero.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum vitae delectus provident rerum quaerat suscipit nulla molestiae soluta tenetur veniam officia mollitia dignissimos id dicta fuga repudiandae quia, repellat? Error.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam excepturi voluptatum, mollitia modi repudiandae ratione, suscipit sed, maiores inventore eius vitae culpa ab asperiores porro qui alias nobis fugiat. Veritatis.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam officiis voluptate explicabo, necessitatibus ipsam dolores illo enim molestias vel consectetur alias dicta qui quo, dolor, reiciendis repellat animi. Voluptates, culpa?
+	</p>
+	<input type="checkbox" id="" disabled="disabled">
+	我已仔细阅读协议，一定遵守。
+	<input type="submit" value="注册" disabled="disabled">
+</body>
+</html>

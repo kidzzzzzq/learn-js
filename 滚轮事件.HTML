@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: #bfa;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var box1 = document.getElementById("box1");
+			box1.onwheel = function(event){
+				event = event || window.event;
+				if(event.wheelDelta > 0 || event.detail < 0)
+				{
+					alert("shang");
+				}else 
+				{
+					alert("xia");
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="box1"></div>
+</body>
+</html>
