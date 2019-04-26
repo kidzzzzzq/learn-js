@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			position: absolute;
+			left: 0px;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			background-color: greenyellow;
+			position: absolute;
+			left: 0px;
+			top:150px;
+		}
+	</style>
+	<script type="text/javascript" src="js/定时器应用.js"></script>
+	<script>
+		window.onload=function() {
+			var box1 = document.getElementById("box1");
+			var btn01 = document.getElementById("btn01");
+			var btn02 = document.getElementById("btn02");
+			var btn03 = document.getElementById("btn03");
+			var btn04 = document.getElementById("btn04");
+			var timer;
+			btn01.onclick = function(){
+				move(box1,"left",800,10);
+				// clearInterval(timer);
+				// 	timer = setInterval(function(){
+				// 	var oldValue = parseInt(getstyle(box1,"left"));
+				// 	var newValue = oldValue + 10;
+				// 	if(newValue > 800)
+				// 	{
+				// 		newValue = 800;
+				// 	}
+				// 	box1.style.left = newValue + "px";
+				// 	if(newValue == 800)
+				// 	{
+				// 		clearInterval(timer);
+				// 	}
+				// },30)		
+			}
+			btn02.onclick = function(){
+				move(box1,"left",0,10);
+				// clearInterval(timer);
+				// 	timer = setInterval(function(){
+				// 	var oldValue = parseInt(getstyle(box1,"left"));
+				// 	var newValue = oldValue - 10;
+				// 	if(newValue < 0)
+				// 	{
+				// 		newValue = 0;
+				// 	}
+				// 	box1.style.left = newValue + "px";
+				// 	if(newValue == 0)
+				// 	{
+				// 		clearInterval(timer);
+				// 	}
+				// },30)		
+			}
+			btn03.onclick = function(){
+				move(box2,"left",800,5);
+			}
+		}
+	</script>
+</head>
+<body>
+
+	<button id="btn02">蓝色向左移动</button>
+	<button id="btn01">蓝色向右移动</button>
+	<br>
+	<button id="btn04">绿色向左移动</button>
+	<button id="btn03">绿色向右移动</button>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div style="width: 0;height: 600px;top: 0;border:1px solid black;position: absolute;left: 800px;"></div>
+</body>
+</html>
