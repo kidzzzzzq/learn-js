@@ -1,0 +1,80 @@
+div.sdmenu {
+	width: 150px;
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	padding-bottom: 10px;
+	background: url(bottom.gif) no-repeat right bottom;
+	color: #fff;
+}
+
+div.sdmenu div {
+	background: url(title.gif) repeat-x;
+	overflow: hidden;
+}
+
+div {
+    display: block;
+}
+div.sdmenu div:first-child {
+	background: url(toptitle.gif) no-repeat;
+}
+
+div.sdmenu div.collapsed {
+	height:25px;
+}
+.collapsed{
+    height: 218px;
+}
+div.sdmenu div span {
+	display: block;
+	height: 15px;
+	line-height: 15px;
+	overflow: hidden;
+	padding: 5px 25px;
+	font-weight: bold;
+	color: white;
+	background: url(expanded.gif) no-repeat 10px center;
+	cursor: pointer;
+	border-bottom: 1px solid #ddd;
+}
+
+div.sdmenu div.collapsed span {
+	background-image: url(collapsed.gif);
+}
+
+div.sdmenu div a {
+	padding: 5px 10px;
+	background: #eee;
+	display: block;
+	border-bottom: 1px solid #ddd;
+	color: #066;
+}
+
+div.sdmenu div a.current {
+	background: #ccc;
+}
+a, img {
+    border: 0;
+    text-decoration: none;
+}
+
+div.sdmenu div a:hover {
+	background: #066 url(linkarrow.gif) no-repeat right center;
+	color: #fff;
+	text-decoration: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a,img {
+    border: 0;
+    text-decoration: none;
+}
+
+body {
+    font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+}
