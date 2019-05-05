@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/队列.js"></script>
+	<script src="js/栈.js"></script>
+	<script src="js/单向链表.js"></script>
+	<script src="js/双向链表.js"></script>
+</head>
+<body>
+	<script>
+		// 使用队列
+		var queue = new Queue();
+		// 1.将元素加入到队列中
+		queue.enqueue('abc');
+		queue.enqueue('cba');
+		queue.enqueue('nba');
+		queue.enqueue('mba');
+		// console.log(queue);
+		// 2.删除队列中的元素
+		// queue.dequeue();
+		// console.log(queue);	
+		// 3.查看前端的元素
+		// console.log(queue.front());
+		// 4.查看队列是否为空
+		// console.log(queue.isEmpty());
+		// 5.查看队列中元素的个数
+		// console.log(queue.size());
+		// 6.toString
+		// console.log(queue.toString());
+		
+		// 栈的使用
+		var stack = new Stack();
+		// 1.将元素压入到栈中
+		stack.push(20);
+		stack.push(10);
+		stack.push(12);
+		stack.push(8);
+		stack.push(7);
+		// console.log(stack);
+		// 2.移除栈顶元素并返回
+		// stack.pop()
+		// console.log(stack);
+		// 3.查看栈顶元素
+		// console.log(stack.peek());
+		// 4.判断栈是否为空
+		// console.log(stack.isEmpty());
+		// 5.返回栈中元素的个数
+		// console.log(stack.size());
+		// 6.toString
+		// console.log(stack.toString());
+
+		// 单向链表的使用	
+		// 创建单向链表
+		var list = new linkedList();
+		// // 1.测试append方法
+		list.append('abc');
+		list.append('cba');
+		list.append('nba');
+		list.append('mba');
+		// console.log(list);
+		// 2.toString
+		// console.log(list.toString());
+		// 3.测试insert方法
+		// console.log(list.toString(list.insert(1,'dna')));	
+		// 4.测试get方法
+		// console.log(list.get(1));
+		// 5.测试indexOf方法
+		// console.log(list.indexOf('dna'));
+		// 6.测试update方法
+		// console.log(list.toString(list.update(2,'newnba')));
+		// 7.测试removeAt方法
+		// console.log(list.toString(list.removeAt(2)));
+		// 8.测试remove方法
+		// list.remove('nba');
+		// console.log(list.toString());
+
+		// 双向链表的使用
+		// 创建双向链表
+		var doublyList = new doublyLinkedList();
+		// 1.测试append方法
+		doublyList.append("black");
+		doublyList.append("white");
+		doublyList.append("blue");
+		doublyList.append("red");
+		doublyList.append("pink");
+		// console.log(doublyList);
+		// 2.测试toString
+		// console.log(doublyList.toString());
+		// 3.测试insert方法
+		// console.log(doublyList.toString(doublyList.insert(3,"yellow")));
+		// 4.测试get方法
+		// console.log(doublyList.get(2));
+		// 5.测试indexOf方法
+		// console.log(doublyList.indexOf("blue"));
+		// 6.测试update方法
+		// console.log(doublyList.toString(doublyList.update(1,"yellow")));
+		// 7.测试removeAt方法
+		// console.log(doublyList.toString(doublyList.removeAt(1)));
+ 
+		
+	</script>
+</body>
+</html>
