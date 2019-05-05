@@ -7,6 +7,7 @@
 	<script src="js/栈.js"></script>
 	<script src="js/单向链表.js"></script>
 	<script src="js/双向链表.js"></script>
+	<script src="js/集合.js"></script>
 </head>
 <body>
 	<script>
@@ -98,8 +99,45 @@
 		// console.log(doublyList.toString(doublyList.update(1,"yellow")));
 		// 7.测试removeAt方法
 		// console.log(doublyList.toString(doublyList.removeAt(1)));
- 
+		// 8.测试removeAt方法
+		// console.log(doublyList.toString(doublyList.remove("pink")));
 		
+		// 测试Set类
+		// 创建Set类对象
+		var set = new Set();
+		// 测试add方法
+		set.add('小黑');
+		set.add('苍牙');
+		set.add('琳');
+		set.add('小椒');
+		set.add('阿力');
+		// console.log(set);
+		// 测试remove,size方法
+		// set.remove('小椒');
+		// console.log(set.size());
+		// console.log(set);
+		// 测试clear方法
+		// set.clear();
+		// console.log(set);
+		// 测试values方法
+		// console.log(set.values());
+		// 并集操作
+		var otherSet = new Set();
+		otherSet.add('老板娘');
+		otherSet.add('苍牙');
+		otherSet.add('琳');
+		otherSet.add('小椒');
+		otherSet.add('阴阳师');
+		// unionSet = set.union(otherSet);
+		// console.log(unionSet.values());
+		// 交集操作
+		// intersectionSet = set.intersection(otherSet);
+		// console.log(intersectionSet.values());
+		// 差集操作(set - otherSet)
+		// differenceSet = set.difference(otherSet);
+		// console.log(differenceSet.values());
+		// 子集(set是否是otherSet的子集)
+		// console.log(set.subset(otherSet));
 	</script>
 </body>
 </html>
