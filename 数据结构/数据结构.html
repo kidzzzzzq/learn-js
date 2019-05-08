@@ -8,6 +8,7 @@
 	<script src="js/单向链表.js"></script>
 	<script src="js/双向链表.js"></script>
 	<script src="js/集合.js"></script>
+	<script src="js/哈希表.js"></script>
 </head>
 <body>
 	<script>
@@ -130,7 +131,7 @@
 		otherSet.add('阴阳师');
 		// unionSet = set.union(otherSet);
 		// console.log(unionSet.values());
-		// 交集操作
+		// 交集操作 
 		// intersectionSet = set.intersection(otherSet);
 		// console.log(intersectionSet.values());
 		// 差集操作(set - otherSet)
@@ -138,6 +139,13 @@
 		// console.log(differenceSet.values());
 		// 子集(set是否是otherSet的子集)
 		// console.log(set.subset(otherSet));
+
+		// 哈希表
+		console.log(hashFunc('小黑',11)); //10
+		console.log(hashFunc('苍牙',11)); //6
+		console.log(hashFunc('琳',11));   //3
+		console.log(hashFunc('小椒',11)); //1
+		console.log(hashFunc('阿力',11)); //0
 	</script>
 </body>
 </html>
