@@ -141,11 +141,21 @@
 		// console.log(set.subset(otherSet));
 
 		// 哈希表
-		console.log(hashFunc('小黑',11)); //10
-		console.log(hashFunc('苍牙',11)); //6
-		console.log(hashFunc('琳',11));   //3
-		console.log(hashFunc('小椒',11)); //1
-		console.log(hashFunc('阿力',11)); //0
+		// 创建哈希表
+		var hashTable = new HashTable();
+		// 用哈希函数得出元素存放在数组中的位置
+		// (此时元素还未添加，数组为空)
+		// console.log(hashTable.hashFunc('小黑',11)); //10
+		// console.log(hashTable.hashFunc('苍牙',11)); //6
+		// console.log(hashTable.hashFunc('琳',11));   //3
+		// console.log(hashTable.hashFunc('小椒',11)); //1
+		// console.log(hashTable.hashFunc('阿力',11)); //0
+		hashTable.put('小黑','18'); 
+		hashTable.put('苍牙','21');
+		hashTable.put('琳','20');
+		hashTable.put('小椒','17');
+		hashTable.put('阿力','22');
+		console.log(hashTable);
 	</script>
 </body>
 </html>
