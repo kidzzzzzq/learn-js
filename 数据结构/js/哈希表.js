@@ -109,6 +109,16 @@ function HashTable() {
 		//没有key
 		return null;
 	}
+	//判断哈希表是否为空
+	HashTable.prototype.isEmpty = function () {
+		// body...
+		return this.count == 0;
+	}
+	//获取哈希表中元素的个数
+	HashTable.prototype.size = function () {
+		// body...
+		return this.count; 
+	}
 }
 
 
