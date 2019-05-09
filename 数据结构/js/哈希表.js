@@ -77,7 +77,7 @@ function HashTable() {
 		}
 		//判断bucket中是否有key
 		for (var i = 0; i < bucket.length; i++) {
-			var tuple = backet[i];
+			var tuple = bucket[i];
 			//如果有key
 			if (tuple[0] == key) {
 				return tuple[1];
@@ -121,7 +121,39 @@ function HashTable() {
 	}
 }
 
-
+// 哈希表
+// 创建哈希表
+// var hashTable = new HashTable();
+// 用哈希函数得出元素存放在数组中的位置
+// (此时元素还未添加，数组为空)
+// console.log(hashTable.hashFunc('小黑',11)); //10
+// console.log(hashTable.hashFunc('苍牙',11)); //6
+// console.log(hashTable.hashFunc('琳',11));   //3
+// console.log(hashTable.hashFunc('小椒',11)); //1
+// console.log(hashTable.hashFunc('阿力',11)); //0
+// console.log(hashTable.hashFunc('隼白',23)); //4
+// console.log(hashTable.hashFunc('阴阳师',30)); //7
+// console.log(hashTable.hashFunc('雷神',50)); //9
+// console.log(hashTable.hashFunc('老板娘',24)); //20
+// 添加操作
+// hashTable.put('小黑',18); 
+// hashTable.put('苍牙',21);
+// hashTable.put('琳',20);
+// hashTable.put('小椒',17);
+// hashTable.put('阿力',22);
+// hashTable.put('隼白',23);
+// hashTable.put('阴阳师',30);
+// hashTable.put('雷神',50);
+// hashTable.put('老板娘',24);
+// 获取操作
+// console.log(hashTable.get('隼白'));
+// 修改操作
+// hashTable.put('隼白',25);
+// console.log(hashTable.get('隼白'));
+// 删除操作
+// hashTable.remove('隼白');
+// console.log(hashTable.get('隼白'));		
+// console.log(hashTable);
 
 
 
