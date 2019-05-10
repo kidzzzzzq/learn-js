@@ -64,7 +64,9 @@ function HashTable() {
 		this.count++;
 		//判断是否需要扩容
 		if (this.count / this.limit > 0.75) {
-			this.resize(this.limit * 2);
+			var newSize = this.limit * 2;
+			var newPrime = this.getPrime(newSize);
+			this.resize(newPrime);
 		}
 	}
 	//3.获取操作
@@ -110,7 +112,9 @@ function HashTable() {
 			}
 			//缩小容量
 			if (this.limit>7 && this.count/this.limit<0.25) {
-				this.resize(Math.floor(this.limit/2));
+				var newSize = Math.floor(this.limit/2)
+				var newPrime = this.getPrime(newSize);
+				this.resize(newPrime);
 			}
 		}
 		//没有key
@@ -149,6 +153,25 @@ function HashTable() {
 				this.put(tuple[0],tuple[1]);
 			}
 		}
+	}
+	//判断某个数字是否是质数
+	HashTable.prototype.isPrime = function (num) {
+		// body...
+		var temp = parseInt(Math.sqrt(num));
+		for (var i = 0; i < temp; i++) {
+			if (num % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	//获取质数的方法
+	HashTable.prototype.getPrime = function (num) {
+		// body...
+		while(!this.isPrime(num)){
+			num++;
+		}
+		return num;
 	}
 }
 
