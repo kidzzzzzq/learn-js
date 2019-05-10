@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>雨滴</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#rain{
+			display: block;
+			background: black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="rain"></canvas>
+	<script>
+		//设置canvas的宽高与浏览器的一样
+		var can = document.getElementById('rain');
+		//获取浏览器宽高
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		//给canvas设置宽高
+		can.width = w;
+		can.height = h;
+		//当浏览器窗口元素发生变化的时候，自动调整canvas的宽高
+		window.onresize = function () {
+			// body...
+			w = window.innerWidth;
+			h = window.innerHeight;
+			can.width = w;
+			can.height = h;
+		}
+		//获得canvas绘画部分
+		var canContent = can.getContext('2d');
+		// 实心笔
+		// canContent.fillStyle = 'red';
+		// 空心笔
+		// canContent.strokeStyle = 'red';
+		// 实心图形
+		// canContent.fillRect(150,150,100,100);
+		// 空心图形
+		// canContent.strokeRect(150,150,100,100);
+		// (x,y,r,绘制起始点,绘制终点)
+		// canContent.arc(400,400,50,0,Math.PI*2);
+		// canContent.fill();
+		//开启定时器
+		//在屏幕刷新之前就完成所有的计算和渲染，提高动画的流畅性
+		// var y=0;	
+		// setInterval(function () {
+			// body...
+			// canContent.clearRect(0,0,w,h);
+			// canContent.fillStyle = 'rgba(0,0,0,0.01)';
+			// canContent.fillRect(0,0,w,h);			
+			// canContent.fillStyle = '#fff';
+			// canContent.fillRect(150,y++,2,10);
+		// },1000/60);	
+		//雨滴起始的随机数
+		function random(min,max) {
+			// body...
+			return Math.random()*(max-min)+min;
+		}
+		//雨滴的封装
+		function Rain() {
+			// body...
+			// 内部属性
+			Rain.prototype.attr = function () {
+				// body...
+				//雨滴的起始位置xy,下落速度v,下落高度h,变成⚪后的半径r
+				//半径变化速率vr,初始透明度a,透明度变化速率va
+				this.x = random(0,w);
+			 	this.y = 0;
+			 	this.v = random(2,8);
+			 	this.h = random(0.7*h,0.9*h);
+			 	this.r = 1;
+			 	this.vr = random(1,2);
+			 	this.a = 1;
+			 	this.va = 0.96;
+			}
+			//方法
+			Rain.prototype.draw = function () {
+				// body...
+				// 雨滴的颜色，形状
+				if (this.y < this.h) {
+					canContent.fillStyle = '#33ffff';
+					canContent.fillRect(this.x,this.y,2,10);
+				} else {
+					//绘制圆形
+					canContent.strokeStyle = 'rgba(0,255,255'+this.a+')';
+					canContent.arc(this.x,this.y,this.r,0,Math.PI*2);
+					canContent.stroke();
+					//重新拿起笔
+					canContent.beginPath();
+				}
+			}
+			Rain.prototype.move = function () {
+				// body...
+				// 雨滴的移动
+				if (this.y < this.h) {
+					this.y += this.v;
+				} else {
+					if (this.a > 0.3) {
+						this.r += this.vr;	
+						this.a *= this.va;
+					} else {
+						this.attr();
+					}
+				}
+				this.draw();
+			}
+		}
+		//创建一个数组用于保存所有雨滴
+		var rainArry = [];
+		function createRain() {
+			// body...
+			//创建一个雨滴
+			var rain = new Rain();
+			//雨滴初始位置
+			rain.attr();
+			//雨滴初始形状
+			rain.draw();
+			//将创建好的雨滴放入数组中
+			rainArry.push(rain);
+		}
+		//创建50个雨滴
+		for (var i = 0; i < 50; i++) {
+			setTimeout(createRain,200*i);
+		}
+		//雨滴移动
+		function moveRain () {
+			// body...
+			canContent.fillStyle = 'rgba(0,0,0,0.01)';
+			canContent.fillRect(0,0,w,h);			
+			for (var i = 0; i < rainArry.length; i++) {
+				rainArry[i].move(); 
+			}
+		}
+		setInterval(moveRain,1000/60);	
+	</script>
+</body>
+</html>
