@@ -125,29 +125,142 @@ function BinarySearchTree() {
 		}
 		return node.key + ':' + node.value;
 	}
-	//7.搜索某个特定的值(递归实现)
+
+	// //7.搜索某个特定的值(递归实现)
+	// BinarySearchTree.prototype.search = function (key) {
+	// 	// body...
+	// 	return this.searchNode(this.root,key);
+	// }
+	// //递归函数
+	// BinarySearchTree.prototype.searchNode = function (node,key) {
+	// 	// body...
+	// 	//判断当前比较的节点是否为空
+	// 	if (node == null) {
+	// 		return false;
+	// 	}
+	// 	//判断节点的key与传入的key的大小
+	// 	if (node.key > key) {
+	// 		//向左开始查找
+	// 		return this.searchNode(node.left,key);
+	// 	} else if (node.key < key) {
+	// 		//向右开始查找
+	// 		return this.searchNode(node.right,key);
+	// 	} else {
+	// 		//node.key = key, 查找到了
+	// 		return node.value;
+	// 	}
+	// }
+
+	//7.搜索某个特定的值(循环实现)
 	BinarySearchTree.prototype.search = function (key) {
 		// body...
-		return this.searchNode(this.root,key);
+		//获取根节点
+		var node = this.root;
+		//循环搜索key
+		//直到节点为空时,终止循环
+		while(node != null){
+			if (node.key > key) {
+				node = node.left;
+			} else if (node.key < key) {
+				node = node.right;
+			} else {
+				return node.value;
+			}
+		}
+		return false;
 	}
-	//递归函数
-	BinarySearchTree.prototype.searchNode = function (node,key) {
+
+	//8.二叉搜索树的删除
+	BinarySearchTree.prototype.remove = function (key) {
 		// body...
-		//判断当前比较的节点是否为空
-		if (node == null) {
+		//寻找我们要删除的节点
+		var current = this.root;
+		//记录要删除节点的父节点
+		var parent = null;
+		//要删除的节点是否为左子节点
+		var isLeftChild = true;
+		//开始寻找要删除的节点
+		while (current.key != key){
+			parent = current;
+			if (current.key > key) {
+				isLeftChild = true;
+				current = current.left;
+			} else {
+				isLeftChild = false;
+				current = current.right;
+			}
+		}
+		//特殊情况,树里面没有对应的key
+		if (current == null) {
 			return false;
 		}
-		//判断节点的key与传入的key的大小
-		if (node.key > key) {
-			//向左开始查找
-			return this.searchNode(node.left,key);
-		} else if (node.key < key) {
-			//向右开始查找
-			return this.searchNode(node.right,key);
-		} else {
-			//node.key = key, 查找到了
-			return node.value;
+		//根据对应情况删除节点
+		//删除的节点是叶子节点
+		if (current.left == null && current.right == null) {
+			//要删除的节点是根节点
+			if (current == this.root) {
+				this.root = null;
+			} else if (isLeftChild) {
+			//要删除的节点是左子节点
+				parent.left = null;
+			} else {
+			//要删除的节点是右子节点
+				parent.right = null;
+			}
+		} 
+		//要删除的节点只有一个左子节点
+		else if (current.right == null) {
+			//节点本身为根节点
+			if (current == this.root) {
+				this.root = current.left;
+			} else if (isLeftChild) {
+				//节点本身为左子节点
+				parent.left = current.left;
+			} else {
+				//节点本身为右子节点
+				parent.right = current.left;
+			}
+		} 
+		//要删除的节点只有一个右子节点
+		else if (current.left == null) {
+			//节点本身为根节点
+			if (current == this.root) {
+				this.root = current.right;
+			} else if (isLeftChild) {
+				//节点本身为左子节点
+				parent.left = current.right;
+			} else {
+				//节点本身为右子节点
+				parent.right = current.right;
+			}
 		}
+		//删除的节点有两个子节点
+		else {
+			//找后继(右子树的最小值)
+			var succssor = this.getSuccssor(current);
+			//节点本身为根节点
+			if (current == this.root) {
+				this.root = succssor;
+			}
+			//节点不为空节点
+			//将后继的左子树变为 
+
+
+		}
+	}
+	//找后继方法
+	BinarySearchTree.prototype.getSuccssor = function (delNode) {
+		// body...
+		//保存找到的后继
+		var succssor = delNode;
+		var current = delNode.right;
+		//循环查找
+		while(current != null){
+			succssor = current;
+			//找右子树的最小值,需要往左找
+			current = current.left;
+		}
+		return succssor; 
 	}
 }
 
@@ -186,3 +299,9 @@ function BinarySearchTree() {
 // 	resultString += key + ':' + value + ',';
 // });
 // console.log(resultString);
+// 获取最小值
+// console.log(bst.min());	
+// 获取最大值
+// console.log(bst.max());	
+// 搜索特定的值
+// console.log(bst.search(16)); 
