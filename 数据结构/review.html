@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- <script src="js/review 单向链表.js"></script> -->
+	<script src="js/单向链表.js"></script>
+</head>
+<body>
+	<script>
+		var list = new linkedList();
+		list.append('小黑');
+		list.append('阿力');
+		list.append('苍牙');
+		list.append('琳');
+		list.append('小椒');
+		list.append('隼白');
+		// console.log(list);
+		// console.log(list.toString());
+		console.log(list.insert(4,'阴阳师'));
+		console.log(list.toString());
+		console.log(list.get(4));
+		console.log(list.indexOf('小椒'));
+		console.log(list.update(3,'雷龙'));
+		console.log(list.toString());
+		console.log(list.removeAt(2));// 0 1 结果一样
+	</script>
+</body>
+</html>
